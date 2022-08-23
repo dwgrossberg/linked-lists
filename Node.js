@@ -1,7 +1,10 @@
 const Node = (value) => {
   return {
-    value: null,
-    nextNode: value || null,
+    value: value || null,
+    nextNode: null,
+    changeValue(newValue) {
+      this.value = newValue;
+    },
   };
 };
 

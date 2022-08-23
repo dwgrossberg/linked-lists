@@ -16,4 +16,8 @@ describe("Node properties", () => {
     expect(valueNode.value).toBe("value");
     expect(nullNode.nextNode).toBe(null);
   });
+  test("changeValue(value) will update the value of Node", () => {
+    nullNode.changeValue("newValue");
+    expect(nullNode.value).toBe("newValue");
+  });
 });
