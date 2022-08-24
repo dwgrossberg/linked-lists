@@ -13,4 +13,12 @@ describe("LinkedList methods", () => {
     expect(list.head()).toBe("node1");
     expect(list.tail()).toBe("node2");
   });
+  test("prepend(value) adds a new node containing value to the start of the list", () => {
+    list.prepend("preNode");
+    expect(list.head()).toBe("preNode");
+    expect(list.tail()).toBe("node2");
+  });
+  test("size() returns the total number of nodes in the list", () => {
+    expect(list.size()).toBe(3);
+  });
 });

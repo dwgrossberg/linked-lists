@@ -17,6 +17,17 @@ const LinkedList = () => {
     pointer.nextNode = newNode;
   };
 
+  const prepend = (value) => {
+    const newNode = Node(value);
+    length += 1;
+    newNode.nextNode = HEAD;
+    HEAD = newNode;
+  };
+
+  const size = () => {
+    return length;
+  };
+
   const head = () => {
     return HEAD.value;
   };
@@ -31,6 +42,8 @@ const LinkedList = () => {
 
   return {
     append,
+    prepend,
+    size,
     head,
     tail,
   };
