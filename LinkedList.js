@@ -6,7 +6,7 @@ const LinkedList = () => {
 
   const append = (value) => {
     const newNode = Node(value);
-    length += 1;
+    length++;
     if (HEAD === null) {
       return (HEAD = newNode);
     }
@@ -19,7 +19,10 @@ const LinkedList = () => {
 
   const prepend = (value) => {
     const newNode = Node(value);
-    length += 1;
+    length++;
+    if (HEAD === null) {
+      return (HEAD = newNode);
+    }
     newNode.nextNode = HEAD;
     HEAD = newNode;
   };
@@ -40,12 +43,27 @@ const LinkedList = () => {
     return pointer.value;
   };
 
+  const at = (index) => {
+    let pointer = HEAD;
+    for (let i = 0; i < index; i++) {
+      pointer = pointer.nextNode;
+    }
+    return pointer;
+  };
+
+  const pop = () => {
+    at(size() - 2).nextNode = null;
+    length--;
+  };
+
   return {
     append,
     prepend,
     size,
     head,
     tail,
+    at,
+    pop,
   };
 };
 

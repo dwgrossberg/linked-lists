@@ -21,4 +21,12 @@ describe("LinkedList methods", () => {
   test("size() returns the total number of nodes in the list", () => {
     expect(list.size()).toBe(3);
   });
+  test("at(index) returns the node at the given index", () => {
+    expect(list.at(1).value).toBe("node1");
+  });
+  test("pop() removes the last element from the list", () => {
+    list.pop();
+    expect(list.size()).toBe(2);
+    expect(list.tail()).toBe("node1");
+  });
 });
