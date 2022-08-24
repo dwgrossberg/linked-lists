@@ -5,20 +5,34 @@ const LinkedList = () => {
   let length = 0;
 
   const append = (value) => {
-    const node = Node(value);
+    const newNode = Node(value);
     length += 1;
     if (HEAD === null) {
-      return (HEAD = node);
+      return (HEAD = newNode);
     }
+    let pointer = HEAD;
+    while (pointer.nextNode !== null) {
+      pointer = pointer.nextNode;
+    }
+    pointer.nextNode = newNode;
   };
 
   const head = () => {
     return HEAD.value;
   };
 
+  const tail = () => {
+    let pointer = HEAD;
+    while (pointer.nextNode !== null) {
+      pointer = pointer.nextNode;
+    }
+    return pointer.value;
+  };
+
   return {
     append,
     head,
+    tail,
   };
 };
 

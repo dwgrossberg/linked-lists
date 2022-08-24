@@ -1,6 +1,6 @@
-const Node = (value) => {
+const Node = (input) => {
   return {
-    value: value || null,
+    value: input || null,
     nextNode: null,
     changeValue(newValue) {
       this.value = newValue;
