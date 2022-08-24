@@ -29,4 +29,13 @@ describe("LinkedList methods", () => {
     expect(list.size()).toBe(2);
     expect(list.tail()).toBe("node1");
   });
+  test("contains(value) returns true if the passed in value is in the list and otherwise returns false", () => {
+    expect(list.contains("preNode")).toBe(true);
+    expect(list.contains("node1")).toBe(true);
+    expect(list.contains("node2")).toBe(false);
+  });
+  test("find(value) returns the index of the node containing value, or null if not found", () => {
+    expect(list.find("node1")).toBe(1);
+    expect(list.find("node2")).toBe(null);
+  });
 });

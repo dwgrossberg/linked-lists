@@ -28,14 +28,17 @@ const LinkedList = () => {
   };
 
   const size = () => {
+    if (!HEAD) return null;
     return length;
   };
 
   const head = () => {
+    if (!HEAD) return null;
     return HEAD.value;
   };
 
   const tail = () => {
+    if (!HEAD) return null;
     let pointer = HEAD;
     while (pointer.nextNode !== null) {
       pointer = pointer.nextNode;
@@ -44,6 +47,7 @@ const LinkedList = () => {
   };
 
   const at = (index) => {
+    if (!HEAD) return null;
     let pointer = HEAD;
     for (let i = 0; i < index; i++) {
       pointer = pointer.nextNode;
@@ -52,8 +56,38 @@ const LinkedList = () => {
   };
 
   const pop = () => {
+    if (!HEAD) return null;
+    // for a List with one node
+    if (HEAD.nextNode === null) {
+      HEAD = null;
+    }
+    // find the pointer before the tail
     at(size() - 2).nextNode = null;
     length--;
+  };
+
+  const contains = (value) => {
+    if (!HEAD) return null;
+    let pointer = HEAD;
+    while (pointer.nextNode !== null) {
+      if (pointer.value === value) return true;
+      pointer = pointer.nextNode;
+    }
+    // check the tail node as well
+    return pointer.value === value ? true : false;
+  };
+
+  const find = (value) => {
+    if (!HEAD) return null;
+    let index = 0;
+    let pointer = HEAD;
+    while (pointer.nextNode !== null) {
+      if (pointer.value === value) return index;
+      pointer = pointer.nextNode;
+      index++;
+    }
+    // check the tail node as well
+    return pointer.value === value ? index : null;
   };
 
   return {
@@ -64,6 +98,8 @@ const LinkedList = () => {
     tail,
     at,
     pop,
+    contains,
+    find,
   };
 };
 
