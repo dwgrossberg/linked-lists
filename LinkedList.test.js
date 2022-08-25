@@ -40,5 +40,18 @@ describe("LinkedList methods", () => {
   });
   test("toString() prints all LinkedList objects as strings to the console", () => {
     expect(list.toString()).toBe("( preNode ) --> ( node1 ) --> null");
+    list.prepend("prePreNode");
+    expect(list.size()).toBe(3);
+    expect(list.toString()).toBe(
+      "( prePreNode ) --> ( preNode ) --> ( node1 ) --> null"
+    );
+  });
+  test("insertAt(value, index) inserts a new node with the provided value at the given index", () => {
+    list.insertAt("node0", 2);
+    expect(list.size()).toBe(4);
+    expect(list.at(2).value).toBe("node0");
+    expect(list.toString()).toBe(
+      "( prePreNode ) --> ( preNode ) --> ( node0 ) --> ( node1 ) --> null"
+    );
   });
 });

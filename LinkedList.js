@@ -104,6 +104,19 @@ const LinkedList = () => {
     return result;
   };
 
+  const insertAt = (value, index) => {
+    if (!HEAD) return null;
+    const newNode = Node(value);
+    length++;
+    let pointer = HEAD;
+    for (let i = 0; i < index - 1; i++) {
+      pointer = pointer.nextNode;
+    }
+    const nextNode = pointer.nextNode;
+    pointer.nextNode = newNode;
+    newNode.nextNode = nextNode;
+  };
+
   return {
     append,
     prepend,
@@ -115,6 +128,7 @@ const LinkedList = () => {
     contains,
     find,
     toString,
+    insertAt,
   };
 };
 
