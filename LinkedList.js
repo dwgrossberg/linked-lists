@@ -90,6 +90,20 @@ const LinkedList = () => {
     return pointer.value === value ? index : null;
   };
 
+  const toString = () => {
+    if (!HEAD) return null;
+    let pointer = HEAD;
+    let result = "";
+    while (pointer.nextNode !== null) {
+      result = result.concat(`( ${pointer.value} ) --> `);
+      pointer = pointer.nextNode;
+    }
+    // for the tail
+    result = result.concat(`( ${pointer.value} ) --> null`);
+    console.log(result);
+    return result;
+  };
+
   return {
     append,
     prepend,
@@ -100,6 +114,7 @@ const LinkedList = () => {
     pop,
     contains,
     find,
+    toString,
   };
 };
 

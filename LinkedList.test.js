@@ -38,4 +38,7 @@ describe("LinkedList methods", () => {
     expect(list.find("node1")).toBe(1);
     expect(list.find("node2")).toBe(null);
   });
+  test("toString() prints all LinkedList objects as strings to the console", () => {
+    expect(list.toString()).toBe("( preNode ) --> ( node1 ) --> null");
+  });
 });
