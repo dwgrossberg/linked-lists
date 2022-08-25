@@ -1,6 +1,6 @@
 # Data Structures: LinkedList
 
-This code is a 'solution' to The Odin Project's Linked Lists Project, a part of their Data Structures & Algorithms course.
+This code is a 'solution' to (The Odin Project's)[https://www.theodinproject.com] (Linked Lists Project)[https://www.theodinproject.com/lessons/javascript-linked-lists], part of their Computer Science course.
 
 All factory functions were implemented using TDD (Jest).
 
