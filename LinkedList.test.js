@@ -54,4 +54,16 @@ describe("LinkedList methods", () => {
       "( prePreNode ) --> ( preNode ) --> ( node0 ) --> ( node1 ) --> null"
     );
   });
+  test("removeAt(index) removes a node at the given index", () => {
+    list.removeAt(1);
+    expect(list.size()).toBe(3);
+    expect(list.at(1).value).toBe("node0");
+    expect(list.toString()).toBe(
+      "( prePreNode ) --> ( node0 ) --> ( node1 ) --> null"
+    );
+    list.removeAt(0);
+    expect(list.size()).toBe(2);
+    expect(list.at(1).value).toBe("node1");
+    expect(list.toString()).toBe("( node0 ) --> ( node1 ) --> null");
+  });
 });
