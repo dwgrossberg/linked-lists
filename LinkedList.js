@@ -119,14 +119,12 @@ const LinkedList = () => {
 
   const removeAt = (index) => {
     if (!HEAD) return null;
-    if (index > length) return;
-
+    if (index > length || index < 0) return;
     if (index === 0) HEAD = HEAD.nextNode;
     else {
       const prePointer = at(index - 1);
       prePointer.nextNode = prePointer.nextNode.nextNode;
     }
-
     length--;
   };
 

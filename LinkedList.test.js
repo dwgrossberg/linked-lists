@@ -65,5 +65,10 @@ describe("LinkedList methods", () => {
     expect(list.size()).toBe(2);
     expect(list.at(1).value).toBe("node1");
     expect(list.toString()).toBe("( node0 ) --> ( node1 ) --> null");
+    list.removeAt(-1);
+    list.removeAt(3);
+    expect(list.size()).toBe(2);
+    expect(list.at(1).value).toBe("node1");
+    expect(list.toString()).toBe("( node0 ) --> ( node1 ) --> null");
   });
 });
